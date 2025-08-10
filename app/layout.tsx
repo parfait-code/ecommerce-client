@@ -1,12 +1,15 @@
-// app/layout.tsx
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import SearchModal from "@/components/search/SearchModal";
+import Header from "../src/components/layout/Header";
+import Footer from "../src/components/layout/Footer";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Fashion Store - Mode & Vêtements",
-    description: "Boutique de vêtements en ligne - Mode pour homme, femme et enfant",
+    title: "COS - Contemporary Fashion",
+    description: "Modern, functional, considered design for women and men",
 };
 
 export default function RootLayout({
@@ -15,11 +18,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="fr" suppressHydrationWarning>
-            <body>
+        <html lang="en">
+            <body className={inter.className}>
                 <Providers>
-                    {children}
-                    <SearchModal />
+                    <Header />
+                    <main className="min-h-screen">{children}</main>
+                    <Footer />
                 </Providers>
             </body>
         </html>
