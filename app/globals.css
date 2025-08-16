@@ -13,90 +13,29 @@
         --foreground: 210 40% 98%;
     }
 }
+[data-heroui] {
+    border-radius: 0 !important;
+}
 
-@layer components {
-    /* Animations personnalisées */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+/* Force tous les composants HeroUI à avoir des bordures carrées */
+[data-heroui] *,
+[data-slot="base"],
+[data-slot="wrapper"],
+[data-slot="content"],
+[data-slot="button"],
+[data-slot="chip"],
+[data-slot="drawer"] {
+    border-radius: 0 !important;
+}
 
-    .animate-fadeIn {
-        animation: fadeIn 0.5s ease-out;
-    }
-
-    @keyframes slideInLeft {
-        from {
-            opacity: 0;
-            transform: translateX(-50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    @keyframes slideInRight {
-        from {
-            opacity: 0;
-            transform: translateX(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    @keyframes scaleIn {
-        from {
-            opacity: 0;
-            transform: scale(0.9);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-
-    .animate-slideInLeft {
-        animation: slideInLeft 0.8s ease-out;
-    }
-
-    .animate-slideInRight {
-        animation: slideInRight 0.8s ease-out;
-    }
-
-    .animate-scaleIn {
-        animation: scaleIn 0.6s ease-out;
-    }
-
-    .video-overlay {
-        background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
-        transition: all 0.3s ease;
-    }
-
-    .video-overlay:hover {
-        background: linear-gradient(45deg, rgba(0,0,0,0.1), rgba(0,0,0,0.05));
-    }
-
-    /* Styles personnalisés pour le e-commerce */
-    .product-grid {
-        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6;
-    }
-
-    .price-tag {
-        @apply text-2xl font-bold text-primary;
-    }
-
-    .btn-primary {
-        @apply bg-primary text-white hover:bg-primary-600 transition-colors;
-    }
+/* Ciblage spécifique pour certains composants */
+.heroui-button,
+.heroui-chip,
+.heroui-drawer,
+.heroui-modal,
+.heroui-card,
+.heroui-input {
+    border-radius: 0 !important;
 }
 
 /* Scrollbar personnalisée */

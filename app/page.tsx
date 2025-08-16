@@ -4,7 +4,7 @@ import ProductGrid from "../src/components/product/ProductGrid";
 import { products } from "../src/data/mockData";
 
 export default function Home() {
-    const featuredProducts = products.filter((p) => p.featured).slice(0, 6);
+    // const featuredProducts = products.filter((p) => p.featured).slice(0, 6);
 
     return (
         <>
@@ -15,7 +15,7 @@ export default function Home() {
                 <h2 className="text-2xl font-medium tracking-wider text-center mb-8">
                     NEW ARRIVALS
                 </h2>
-                <ProductGrid products={featuredProducts} showControls={false} />
+                <ProductGrid products={products} showControls={false} />
             </section>
         </>
     );

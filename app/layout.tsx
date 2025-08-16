@@ -4,6 +4,8 @@ import "./globals.css";
 import { Providers } from "./providers";
 import Header from "../src/components/layout/Header";
 import Footer from "../src/components/layout/Footer";
+import CartDrawer from "../src/components/cart/CartDrawer";
+import QuickView from "../src/components/product/QuickView";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +26,8 @@ export default function RootLayout({
                     <Header />
                     <main className="min-h-screen">{children}</main>
                     <Footer />
+                    <CartDrawer />
+                    {/* <QuickView /> */}
                 </Providers>
             </body>
         </html>
